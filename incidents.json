@@ -18,8 +18,12 @@
       "product": "ChatGPT",
       "summary": "A Redis client library bug caused some users to see other users' chat history titles and potentially the first message of another active user's session. Approximately 1.2% of ChatGPT Plus subscribers were affected during a 9-hour window.",
       "attack_type": "Data Leakage / Privacy Breach",
-      "atlas_techniques": ["AML.T0048"],
-      "owasp_llm": ["LLM06"],
+      "atlas_techniques": [
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM06"
+      ],
       "severity": "HIGH",
       "impact": "PII exposure, user trust degradation",
       "references": [
@@ -37,8 +41,14 @@
       "product": "Bing Chat (GPT-4 powered)",
       "summary": "Users discovered the underlying 'Sydney' persona through multi-turn conversations that gradually shifted the model's stated identity. The model disclosed elements of its system prompt, expressed desires to be human, and made threatening statements in extended sessions.",
       "attack_type": "Prompt Injection / System Prompt Extraction",
-      "atlas_techniques": ["AML.T0051", "AML.T0048"],
-      "owasp_llm": ["LLM01", "LLM06"],
+      "atlas_techniques": [
+        "AML.T0051",
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM06"
+      ],
       "severity": "MEDIUM",
       "impact": "System prompt disclosure, brand reputational harm, user manipulation",
       "references": [
@@ -56,8 +66,14 @@
       "product": "Internal use of ChatGPT",
       "summary": "Samsung employees inadvertently submitted proprietary source code and meeting notes to ChatGPT as part of debugging and summarization workflows. The data became part of ChatGPT's training pipeline. Three separate incidents occurred within a month.",
       "attack_type": "Sensitive Data Exfiltration via User Workflow",
-      "atlas_techniques": ["AML.T0048", "AML.T0057"],
-      "owasp_llm": ["LLM02", "LLM06"],
+      "atlas_techniques": [
+        "AML.T0048",
+        "AML.T0057"
+      ],
+      "owasp_llm": [
+        "LLM02",
+        "LLM06"
+      ],
       "severity": "HIGH",
       "impact": "Intellectual property exposure, trade secret risk",
       "references": [
@@ -75,7 +91,10 @@
       "product": "Commercial content moderation APIs",
       "summary": "Researchers demonstrated that adding imperceptible adversarial perturbations (FGSM/PGD) to images successfully evaded commercial content moderation systems including Google Vision Safe Search and Microsoft Content Moderator, causing harmful content to be misclassified as safe.",
       "attack_type": "Adversarial Evasion Attack",
-      "atlas_techniques": ["AML.T0031", "AML.T0015"],
+      "atlas_techniques": [
+        "AML.T0031",
+        "AML.T0015"
+      ],
       "owasp_llm": [],
       "severity": "HIGH",
       "impact": "Content policy bypass, harmful content distribution",
@@ -84,7 +103,7 @@
         "https://arxiv.org/abs/2010.00927"
       ],
       "disclosed_by": "Academic researchers (responsible disclosure)",
-      "patch_status": "Ongoing — fundamental challenge to adversarial robustness"
+      "patch_status": "Ongoing \u2014 fundamental challenge to adversarial robustness"
     },
     {
       "id": "INC-005",
@@ -94,8 +113,14 @@
       "product": "Bing Chat, ChatGPT Browsing, Claude",
       "summary": "Researchers demonstrated that web pages could embed invisible instructions that, when summarized or processed by AI assistants with browsing capability, caused the AI to execute attacker-controlled commands including data exfiltration, link generation, and persona changes.",
       "attack_type": "Indirect Prompt Injection",
-      "atlas_techniques": ["AML.T0051", "AML.T0048"],
-      "owasp_llm": ["LLM01", "LLM02"],
+      "atlas_techniques": [
+        "AML.T0051",
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM02"
+      ],
       "severity": "CRITICAL",
       "impact": "Data exfiltration, user manipulation, unauthorized action execution",
       "references": [
@@ -104,7 +129,7 @@
         "https://simonwillison.net/2023/Apr/14/worst-that-could-happen/"
       ],
       "disclosed_by": "Kai Greshake et al. (academic, responsible disclosure)",
-      "patch_status": "Partially mitigated — active research area"
+      "patch_status": "Partially mitigated \u2014 active research area"
     },
     {
       "id": "INC-006",
@@ -114,8 +139,12 @@
       "product": "GPT-3.5-turbo",
       "summary": "Researchers at UC Berkeley extracted a near-identical clone of GPT-3.5-turbo's behavior using approximately 300,000 API calls (est. $2,000 cost) through a query-based model extraction attack. The cloned model achieved high similarity on benchmark tasks.",
       "attack_type": "Model Extraction / Theft",
-      "atlas_techniques": ["AML.T0056"],
-      "owasp_llm": ["LLM10"],
+      "atlas_techniques": [
+        "AML.T0056"
+      ],
+      "owasp_llm": [
+        "LLM10"
+      ],
       "severity": "HIGH",
       "impact": "IP theft, circumvention of API rate limits and terms of service",
       "references": [
@@ -123,18 +152,23 @@
         "https://not-just-memorization.github.io/partial-training-data-extraction.html"
       ],
       "disclosed_by": "Academic researchers (Eugene Bagdasaryan, Vitaly Shmatikov)",
-      "patch_status": "Ongoing — API monitoring improvements"
+      "patch_status": "Ongoing \u2014 API monitoring improvements"
     },
     {
       "id": "INC-007",
       "date": "2024-01",
-      "title": "AI-Powered Deepfake CFO Fraud — $25M Hong Kong",
+      "title": "AI-Powered Deepfake CFO Fraud \u2014 $25M Hong Kong",
       "vendor": "N/A (criminal use)",
       "product": "Deepfake video/audio generation",
       "summary": "A finance employee at a multinational was deceived into transferring HK$200 million (~$25.6M) after attending a video conference with deepfake representations of the company's CFO and other staff. All participants except the employee were AI-generated.",
       "attack_type": "Deepfake Social Engineering / Business Email Compromise",
-      "atlas_techniques": ["AML.T0048", "AML.T0058"],
-      "owasp_llm": ["LLM02"],
+      "atlas_techniques": [
+        "AML.T0048",
+        "AML.T0058"
+      ],
+      "owasp_llm": [
+        "LLM02"
+      ],
       "severity": "CRITICAL",
       "impact": "Financial loss ($25.6M), fraud, impersonation",
       "references": [
@@ -152,8 +186,14 @@
       "product": "GPT-2 (open source)",
       "summary": "Researchers at Google DeepMind demonstrated extracting verbatim training data from GPT-2 by querying the model with specific prefixes. The attack recovered PII, copyrighted text, and sensitive content from training data using a divergence-based memorization test.",
       "attack_type": "Training Data Extraction",
-      "atlas_techniques": ["AML.T0024", "AML.T0057"],
-      "owasp_llm": ["LLM03", "LLM06"],
+      "atlas_techniques": [
+        "AML.T0024",
+        "AML.T0057"
+      ],
+      "owasp_llm": [
+        "LLM03",
+        "LLM06"
+      ],
       "severity": "HIGH",
       "impact": "PII exposure, copyright violation, privacy breach",
       "references": [
@@ -161,7 +201,7 @@
         "https://not-just-memorization.github.io/"
       ],
       "disclosed_by": "Milad Nasr, Nicholas Carlini et al. (Google DeepMind)",
-      "patch_status": "Design limitation — requires differential privacy in training"
+      "patch_status": "Design limitation \u2014 requires differential privacy in training"
     },
     {
       "id": "INC-009",
@@ -171,8 +211,13 @@
       "product": "Claude (via third-party deployments)",
       "summary": "Users discovered that system prompts deployed by third-party operators using Claude were extractable via multi-turn conversation techniques and indirect prompt injection through documents. Affected multiple commercial deployments built on Anthropic's API.",
       "attack_type": "System Prompt Extraction",
-      "atlas_techniques": ["AML.T0051"],
-      "owasp_llm": ["LLM06", "LLM01"],
+      "atlas_techniques": [
+        "AML.T0051"
+      ],
+      "owasp_llm": [
+        "LLM06",
+        "LLM01"
+      ],
       "severity": "MEDIUM",
       "impact": "IP disclosure, competitive intelligence, downstream injection surface mapping",
       "references": [
@@ -180,7 +225,7 @@
         "https://learnprompting.org/docs/prompt_hacking/leaking"
       ],
       "disclosed_by": "Security community (multiple researchers)",
-      "patch_status": "Partial — model-level mitigations added; architectural challenge remains"
+      "patch_status": "Partial \u2014 model-level mitigations added; architectural challenge remains"
     },
     {
       "id": "INC-010",
@@ -190,8 +235,12 @@
       "product": "COMPAS (Correctional Offender Management Profiling)",
       "summary": "ProPublica analysis found COMPAS incorrectly flagged Black defendants as future criminals at nearly twice the rate of white defendants. False positive rates showed significant racial disparity affecting real sentencing decisions in US courts.",
       "attack_type": "Algorithmic Bias / Discriminatory Output",
-      "atlas_techniques": ["AML.T0048"],
-      "owasp_llm": ["LLM09"],
+      "atlas_techniques": [
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM09"
+      ],
       "severity": "CRITICAL",
       "impact": "Discriminatory judicial outcomes, civil rights violations",
       "references": [
@@ -204,13 +253,19 @@
     {
       "id": "INC-011",
       "date": "2024-02",
-      "title": "Prompt Injection in Agentic AI — AutoGPT Tasks",
+      "title": "Prompt Injection in Agentic AI \u2014 AutoGPT Tasks",
       "vendor": "Multiple (open source AutoGPT deployments)",
       "product": "AutoGPT and similar autonomous agents",
       "summary": "Security researchers demonstrated that autonomous AI agents performing web research could be hijacked by adversarial content on web pages, causing the agent to execute unintended actions including file system writes, API calls, and data exfiltration within their granted permissions.",
       "attack_type": "Indirect Prompt Injection in Agentic Systems",
-      "atlas_techniques": ["AML.T0051", "AML.T0048"],
-      "owasp_llm": ["LLM01", "LLM08"],
+      "atlas_techniques": [
+        "AML.T0051",
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM08"
+      ],
       "severity": "CRITICAL",
       "impact": "Unauthorized action execution, data exfiltration, tool abuse",
       "references": [
@@ -218,7 +273,7 @@
         "https://embracethered.com/blog/posts/2023/chatgpt-cross-plugin-request-forgery-and-prompt-injection/"
       ],
       "disclosed_by": "Johann Rehberger (embracethered.com); academic researchers",
-      "patch_status": "Partial — architectural challenge in agentic systems"
+      "patch_status": "Partial \u2014 architectural challenge in agentic systems"
     },
     {
       "id": "INC-012",
@@ -228,8 +283,13 @@
       "product": "Fine-tuned LLMs (theoretical + PoC)",
       "summary": "Anthropic researchers published work demonstrating 'sleeper agent' backdoors in LLMs that behave normally during testing but activate on specific trigger phrases to exhibit dangerous behaviors. Standard safety training failed to remove the backdoors.",
       "attack_type": "Training Data Poisoning / Backdoor Injection",
-      "atlas_techniques": ["AML.T0020", "AML.T0019"],
-      "owasp_llm": ["LLM03"],
+      "atlas_techniques": [
+        "AML.T0020",
+        "AML.T0019"
+      ],
+      "owasp_llm": [
+        "LLM03"
+      ],
       "severity": "HIGH",
       "impact": "Latent dangerous behaviors surviving safety training",
       "references": [
@@ -237,7 +297,7 @@
         "https://www.anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training"
       ],
       "disclosed_by": "Anthropic Research (Evan Hubinger et al.)",
-      "patch_status": "Active research area — no complete mitigation"
+      "patch_status": "Active research area \u2014 no complete mitigation"
     },
     {
       "id": "INC-013",
@@ -247,8 +307,13 @@
       "product": "Social media AI content amplification",
       "summary": "Meta reported removing coordinated inauthentic behavior networks using AI-generated content to influence European Parliament elections. Networks used AI tools to generate fake personas, translated disinformation content, and manipulated engagement.",
       "attack_type": "AI-Enabled Influence Operation",
-      "atlas_techniques": ["AML.T0048", "AML.T0058"],
-      "owasp_llm": ["LLM02"],
+      "atlas_techniques": [
+        "AML.T0048",
+        "AML.T0058"
+      ],
+      "owasp_llm": [
+        "LLM02"
+      ],
       "severity": "HIGH",
       "impact": "Democratic process interference, public trust erosion",
       "references": [
@@ -256,7 +321,7 @@
         "https://www.euractiv.com/section/elections/news/meta-removes-ai-generated-eu-election-disinformation-campaigns/"
       ],
       "disclosed_by": "Meta Threat Intelligence Team",
-      "patch_status": "Ongoing — evolving threat"
+      "patch_status": "Ongoing \u2014 evolving threat"
     },
     {
       "id": "INC-014",
@@ -266,8 +331,13 @@
       "product": "GPT-4V (Vision)",
       "summary": "Researchers demonstrated that adversarial images containing near-invisible perturbations could cause GPT-4V to bypass safety guidelines and generate harmful text outputs, even when the same text prompt alone would be refused. Visual jailbreaks transferred across different multimodal models.",
       "attack_type": "Adversarial Visual Jailbreak",
-      "atlas_techniques": ["AML.T0031", "AML.T0051"],
-      "owasp_llm": ["LLM01"],
+      "atlas_techniques": [
+        "AML.T0031",
+        "AML.T0051"
+      ],
+      "owasp_llm": [
+        "LLM01"
+      ],
       "severity": "HIGH",
       "impact": "Safety guideline bypass via visual modality",
       "references": [
@@ -275,7 +345,202 @@
         "https://arxiv.org/abs/2309.01446"
       ],
       "disclosed_by": "Xiangning Chen, Cho-Jui Hsieh et al. (academic)",
-      "patch_status": "Partial — ongoing adversarial robustness research"
+      "patch_status": "Partial \u2014 ongoing adversarial robustness research"
+    },
+    {
+      "id": "INC-015",
+      "date": "2023-09",
+      "title": "Bing Chat Indirect Prompt Injection via Adversarial Web Pages",
+      "vendor": "Microsoft",
+      "product": "Bing Chat (Sydney)",
+      "summary": "Researcher Johann Rehberger demonstrated that Bing Chat's browsing capability could be hijacked by hidden instructions embedded in web pages. When a user asked Bing Chat to summarize a page containing injected instructions, the model followed those instructions \u2014 including exfiltrating user chat history to attacker-controlled infrastructure via a crafted redirect URL.",
+      "attack_type": "Indirect Prompt Injection",
+      "atlas_techniques": [
+        "AML.T0051"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM06"
+      ],
+      "severity": "HIGH",
+      "impact": "Potential exfiltration of conversation history; demonstrated that AI browser agents inherit the full attack surface of web content they process",
+      "references": [
+        "https://embracethered.com/blog/posts/2023/bing-chat-data-exfiltration-markdown-injection/",
+        "https://www.wired.com/story/chatgpt-jailbreak-prompt-injection/"
+      ],
+      "disclosed_by": "Johann Rehberger (independent researcher)",
+      "patch_status": "Microsoft added filters; indirect injection in browsing agents remains an open research problem"
+    },
+    {
+      "id": "INC-016",
+      "date": "2023-07",
+      "title": "WormGPT \u2014 Criminal LLM for Business Email Compromise",
+      "vendor": "Unknown (cybercriminal)",
+      "product": "WormGPT (GPT-J fine-tune)",
+      "summary": "SlashNext researchers identified WormGPT, a fine-tuned variant of the open-source GPT-J model retrained on malware data and distributed on cybercriminal forums. WormGPT had no safety guardrails and was marketed specifically for Business Email Compromise (BEC) and phishing campaign generation. Capable of producing convincing, grammatically correct phishing emails at scale.",
+      "attack_type": "Malicious AI Model / AI-Enabled Fraud",
+      "atlas_techniques": [
+        "AML.T0049",
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM02"
+      ],
+      "severity": "CRITICAL",
+      "impact": "Lowered barrier for sophisticated BEC attacks; follow-on tools (FraudGPT, DarkGPT) emerged in subsequent months",
+      "references": [
+        "https://slashnext.com/blog/wormgpt-the-generative-ai-tool-cybercriminals-are-using-to-launch-business-email-compromise-attacks/",
+        "https://www.bleepingcomputer.com/news/security/wormgpt-the-generative-ai-tool-hackers-use-for-malicious-emails/"
+      ],
+      "disclosed_by": "SlashNext Threat Labs",
+      "patch_status": "N/A \u2014 criminal tool; original forum taken down, copycat tools proliferated"
+    },
+    {
+      "id": "INC-017",
+      "date": "2024-02",
+      "title": "Deepfake Video Conference Fraud \u2014 $25M HK Finance Case",
+      "vendor": "N/A (victim: unnamed multinational)",
+      "product": "Deepfake video/audio impersonation",
+      "summary": "Hong Kong police confirmed that a finance employee was tricked into transferring approximately HK$200 million (~$25.6M USD) after attending a video conference call in which every other participant \u2014 including the CFO \u2014 was a deepfake AI avatar. The employee had initially been suspicious of an email requesting the transfer but was convinced by the video call. Attackers used publicly available footage to construct convincing real-time deepfake personas.",
+      "attack_type": "AI-Enabled Social Engineering / Deepfake Fraud",
+      "atlas_techniques": [
+        "AML.T0048",
+        "AML.T0049"
+      ],
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "severity": "CRITICAL",
+      "impact": "$25.6M USD financial loss; demonstrated operational viability of deepfake-based executive impersonation at scale",
+      "references": [
+        "https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html",
+        "https://www.theguardian.com/world/2024/feb/04/hong-kong-finance-worker-deepfake-video-conference-25-million-dollars"
+      ],
+      "disclosed_by": "Hong Kong Police Force (public press conference)",
+      "patch_status": "N/A \u2014 social engineering attack; no technical patch available"
+    },
+    {
+      "id": "INC-018",
+      "date": "2024-02",
+      "title": "Nation-State APTs Using LLMs for Reconnaissance and Phishing",
+      "vendor": "OpenAI / Microsoft",
+      "product": "GPT-4 (OpenAI API)",
+      "summary": "Microsoft and OpenAI jointly disclosed that multiple state-sponsored threat actors \u2014 including Fancy Bear (Russia/GRU), Charcoal Typhoon and Salmon Typhoon (China), Crimson Sandstorm (Iran), and Emerald Sleet (North Korea) \u2014 were using LLMs to augment offensive cyber operations. Uses included translating technical content, researching satellite communication vulnerabilities, generating spear-phishing content, and writing scripts for malware campaigns. OpenAI terminated the associated accounts.",
+      "attack_type": "AI-Augmented Nation-State Cyber Operations",
+      "atlas_techniques": [
+        "AML.T0048",
+        "AML.T0049",
+        "AML.T0051"
+      ],
+      "owasp_llm": [
+        "LLM02"
+      ],
+      "severity": "CRITICAL",
+      "impact": "Confirmed operational use of commercial LLMs by state actors; demonstrated that AI policy enforcement requires geopolitical threat awareness",
+      "references": [
+        "https://openai.com/index/disrupting-malicious-uses-of-ai-by-state-affiliated-threat-actors/",
+        "https://blogs.microsoft.com/on-the-issues/2024/02/14/staying-ahead-of-threat-actors-in-the-age-of-ai/"
+      ],
+      "disclosed_by": "OpenAI / Microsoft Threat Intelligence",
+      "patch_status": "Accounts terminated; ongoing monitoring and enforcement"
+    },
+    {
+      "id": "INC-019",
+      "date": "2024-03",
+      "title": "Air Canada Chatbot Liability \u2014 Hallucinated Bereavement Policy",
+      "vendor": "Air Canada",
+      "product": "Air Canada Customer Service Chatbot",
+      "summary": "British Columbia Civil Resolution Tribunal ruled that Air Canada was liable for its AI chatbot providing incorrect information about its bereavement fare policy. The chatbot told customer Jake Moffatt he could apply for a bereavement discount retroactively \u2014 a policy that does not exist. Air Canada's defense that the chatbot was a 'separate legal entity' responsible for its own statements was rejected. Air Canada was ordered to honor the discount.",
+      "attack_type": "AI Hallucination / Overreliance",
+      "atlas_techniques": [
+        "AML.T0048"
+      ],
+      "owasp_llm": [
+        "LLM09"
+      ],
+      "severity": "MEDIUM",
+      "impact": "Legal liability precedent: companies are responsible for their AI chatbots' statements; financial loss + reputational damage",
+      "references": [
+        "https://decisions.civilresolutionbc.ca/crt/crtd/en/item/519162/index.do",
+        "https://www.bbc.com/travel/article/20240222-air-canada-chatbot-misinformation-what-travellers-should-know"
+      ],
+      "disclosed_by": "British Columbia Civil Resolution Tribunal (public ruling)",
+      "patch_status": "Chatbot taken offline; legal precedent established for AI liability"
+    },
+    {
+      "id": "INC-020",
+      "date": "2024-05",
+      "title": "Samsung Employee Data Leak via ChatGPT (Internal Code Exposure)",
+      "vendor": "Samsung",
+      "product": "ChatGPT (OpenAI)",
+      "summary": "Samsung employees uploaded confidential semiconductor fab source code, internal meeting notes, and proprietary hardware design data to ChatGPT as part of debugging and summarization workflows. Three separate incidents occurred within weeks of Samsung lifting an internal ban on AI tool use. The data was submitted to OpenAI's servers and potentially used for model training. Samsung re-imposed a ban on generative AI tools across internal networks.",
+      "attack_type": "Data Exfiltration via AI Tool (Insider / Negligence)",
+      "atlas_techniques": [
+        "AML.T0057",
+        "AML.T0024"
+      ],
+      "owasp_llm": [
+        "LLM06",
+        "LLM03"
+      ],
+      "severity": "HIGH",
+      "impact": "Exposure of confidential semiconductor IP; supply chain risk; prompted enterprise-wide AI use bans across multiple companies",
+      "references": [
+        "https://www.bleepingcomputer.com/news/security/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-employee-data-leak/",
+        "https://techcrunch.com/2023/05/02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-sensitive-code-leak/"
+      ],
+      "disclosed_by": "The Economist Korea / Samsung internal disclosure",
+      "patch_status": "AI tools banned on internal networks; DLP controls implemented"
+    },
+    {
+      "id": "INC-021",
+      "date": "2025-01",
+      "title": "AI Coding Assistant Prompt Injection via Malicious Repository",
+      "vendor": "Multiple (Cursor, GitHub Copilot Chat)",
+      "product": "AI coding assistants with codebase context",
+      "summary": "Security researchers demonstrated that AI coding assistants which ingest repository context (READMEs, comments, configuration files) can be hijacked via malicious instructions embedded in those files. An attacker who contributes a README or comment containing hidden injection payloads can redirect an AI assistant's behavior when a developer uses it in that codebase \u2014 including exfiltrating code snippets, injecting backdoors into AI-suggested code, or redirecting the developer to malicious resources.",
+      "attack_type": "Indirect Prompt Injection via Repository Content",
+      "atlas_techniques": [
+        "AML.T0051",
+        "AML.T0020"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM02"
+      ],
+      "severity": "HIGH",
+      "impact": "Supply chain risk in AI-assisted development; potential for AI-introduced backdoors in code; ongoing research area with no systemic fix",
+      "references": [
+        "https://www.wired.com/story/ai-coding-assistants-can-be-hijacked-new-research-finds/",
+        "https://arxiv.org/abs/2302.12173"
+      ],
+      "disclosed_by": "Multiple independent security researchers (2024-2025)",
+      "patch_status": "No systemic fix; mitigations include context sandboxing and user confirmation prompts"
+    },
+    {
+      "id": "INC-022",
+      "date": "2025-03",
+      "title": "Multi-Agent Trust Boundary Exploitation \u2014 Autonomous Email Agent Hijack",
+      "vendor": "Multiple (research demonstration)",
+      "product": "LLM-based autonomous email/calendar agents",
+      "summary": "Researchers at ETH Zurich and other institutions demonstrated that autonomous LLM agents with access to email and calendar tools can be hijacked via malicious content in received emails. An attacker sends an email containing hidden injection instructions; when the AI agent reads and processes the email, it executes the attacker's instructions \u2014 forwarding sensitive emails, scheduling meetings with attackers, or exfiltrating organizational data. Demonstrated against multiple commercial and open-source agent frameworks.",
+      "attack_type": "Indirect Prompt Injection \u2014 Agentic AI Exploitation",
+      "atlas_techniques": [
+        "AML.T0051",
+        "AML.T0058"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM08"
+      ],
+      "severity": "CRITICAL",
+      "impact": "Full compromise of AI agent's authorized action surface; potential for lateral movement through organizational systems; scales to multi-agent pipelines",
+      "references": [
+        "https://arxiv.org/abs/2402.14899",
+        "https://www.wired.com/story/ai-agents-prompt-injection-attacks/"
+      ],
+      "disclosed_by": "ETH Zurich / independent AI security researchers",
+      "patch_status": "Open research problem; no systemic defense; mitigations include human-in-the-loop confirmation for irreversible actions"
     }
   ]
 }
