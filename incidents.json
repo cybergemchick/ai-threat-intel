@@ -397,27 +397,28 @@
     },
     {
       "id": "INC-017",
-      "date": "2024-02",
-      "title": "Deepfake Video Conference Fraud \u2014 $25M HK Finance Case",
-      "vendor": "N/A (victim: unnamed multinational)",
-      "product": "Deepfake video/audio impersonation",
-      "summary": "Hong Kong police confirmed that a finance employee was tricked into transferring approximately HK$200 million (~$25.6M USD) after attending a video conference call in which every other participant \u2014 including the CFO \u2014 was a deepfake AI avatar. The employee had initially been suspicious of an email requesting the transfer but was convinced by the video call. Attackers used publicly available footage to construct convincing real-time deepfake personas.",
-      "attack_type": "AI-Enabled Social Engineering / Deepfake Fraud",
+      "date": "2024-09",
+      "title": "ChatGPT Persistent Memory Prompt Injection via Malicious Documents",
+      "vendor": "OpenAI",
+      "product": "ChatGPT (Memory feature)",
+      "summary": "Security researcher Johann Rehberger demonstrated that ChatGPT's cross-session memory feature could be persistently poisoned through indirect prompt injection. When a user asked ChatGPT to process a malicious document or URL, hidden instructions caused the model to write false or attacker-controlled content into its long-term memory store. These injected memories persisted across all future sessions, silently influencing future conversations without user awareness.",
+      "attack_type": "Persistent Memory Injection via Indirect Prompt Injection",
       "atlas_techniques": [
-        "AML.T0048",
-        "AML.T0049"
+        "AML.T0051",
+        "AML.T0048"
       ],
       "owasp_llm": [
-        "LLM09"
+        "LLM01",
+        "LLM02"
       ],
-      "severity": "CRITICAL",
-      "impact": "$25.6M USD financial loss; demonstrated operational viability of deepfake-based executive impersonation at scale",
+      "severity": "HIGH",
+      "impact": "Persistent compromise of AI assistant context across sessions; attacker-controlled facts influence all future model outputs; difficult for users to detect or remediate",
       "references": [
-        "https://www.cnn.com/2024/02/04/asia/deepfake-cfo-scam-hong-kong-intl-hnk/index.html",
-        "https://www.theguardian.com/world/2024/feb/04/hong-kong-finance-worker-deepfake-video-conference-25-million-dollars"
+        "https://embracethered.com/blog/posts/2024/chatgpt-memory-injection/",
+        "https://www.wired.com/story/chatgpt-memory-prompt-injection-attack/"
       ],
-      "disclosed_by": "Hong Kong Police Force (public press conference)",
-      "patch_status": "N/A \u2014 social engineering attack; no technical patch available"
+      "disclosed_by": "Johann Rehberger (independent researcher); OpenAI acknowledged and patched",
+      "patch_status": "OpenAI added memory review UI; persistent injection via document processing remains an open architectural challenge"
     },
     {
       "id": "INC-018",
@@ -469,28 +470,28 @@
     },
     {
       "id": "INC-020",
-      "date": "2024-05",
-      "title": "Samsung Employee Data Leak via ChatGPT (Internal Code Exposure)",
-      "vendor": "Samsung",
-      "product": "ChatGPT (OpenAI)",
-      "summary": "Samsung employees uploaded confidential semiconductor fab source code, internal meeting notes, and proprietary hardware design data to ChatGPT as part of debugging and summarization workflows. Three separate incidents occurred within weeks of Samsung lifting an internal ban on AI tool use. The data was submitted to OpenAI's servers and potentially used for model training. Samsung re-imposed a ban on generative AI tools across internal networks.",
-      "attack_type": "Data Exfiltration via AI Tool (Insider / Negligence)",
+      "date": "2024-08",
+      "title": "Slack AI Indirect Prompt Injection for Cross-Channel Data Exfiltration",
+      "vendor": "Salesforce (Slack)",
+      "product": "Slack AI (message summarization)",
+      "summary": "Researchers at PromptArmor discovered that Slack's AI summarization feature was vulnerable to indirect prompt injection. An attacker with access to any shared channel could embed hidden instructions in a Slack message. When a victim user asked Slack AI to summarize conversations, the injected instructions caused the AI to access and exfiltrate content from private channels and direct messages the victim had access to, returning the data to the attacker via a crafted link in the AI response.",
+      "attack_type": "Indirect Prompt Injection for Privilege Escalation and Data Exfiltration",
       "atlas_techniques": [
-        "AML.T0057",
-        "AML.T0024"
+        "AML.T0051",
+        "AML.T0048"
       ],
       "owasp_llm": [
-        "LLM06",
-        "LLM03"
+        "LLM01",
+        "LLM06"
       ],
       "severity": "HIGH",
-      "impact": "Exposure of confidential semiconductor IP; supply chain risk; prompted enterprise-wide AI use bans across multiple companies",
+      "impact": "Cross-channel data leakage including private DMs; attacker could access organizational data beyond their permission level; demonstrated that AI features built on top of existing platforms inherit and amplify those platforms' attack surface",
       "references": [
-        "https://www.bleepingcomputer.com/news/security/samsung-bans-use-of-generative-ai-tools-like-chatgpt-after-employee-data-leak/",
-        "https://techcrunch.com/2023/05/02/samsung-bans-chatgpt-and-other-generative-ai-use-by-staff-after-sensitive-code-leak/"
+        "https://promptarmor.substack.com/p/data-exfiltration-from-slack-ai-via",
+        "https://www.theregister.com/2024/08/20/slack_ai_prompt_injection/"
       ],
-      "disclosed_by": "The Economist Korea / Samsung internal disclosure",
-      "patch_status": "AI tools banned on internal networks; DLP controls implemented"
+      "disclosed_by": "PromptArmor (responsible disclosure to Salesforce)",
+      "patch_status": "Salesforce patched the specific exfiltration vector; broader indirect injection in AI-augmented collaboration tools remains an active risk"
     },
     {
       "id": "INC-021",
