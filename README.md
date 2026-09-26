@@ -8,7 +8,7 @@ A curated, MITRE ATLAS-mapped catalog of publicly documented AI/ML security inci
 
 ## Coverage
 
-14 documented incidents across categories:
+22 documented incidents across categories:
 
 | Category | Count | OWASP LLM IDs |
 |----------|-------|--------------|
@@ -78,9 +78,9 @@ Each entry in `incidents.json` includes:
 | AML.T0019 | Backdoor ML Model | INC-012 |
 | AML.T0020 | Poison Training Data | INC-012 |
 | AML.T0024 | Exfiltrate Training Data | INC-008 |
-| AML.T0031 | Adversarial Patch | INC-004, INC-014 |
-| AML.T0048 | Societal Harm | INC-001–005, INC-010–011, INC-013–014 |
-| AML.T0051 | LLM Prompt Injection | INC-002, INC-005, INC-009, INC-011, INC-014 |
+| AML.T0031 | Adversarial Patch | INC-004, INC-022 |
+| AML.T0048 | Societal Harm | INC-001–005, INC-010–011, INC-013–022 |
+| AML.T0051 | LLM Prompt Injection | INC-002, INC-005, INC-009, INC-011, INC-022 |
 | AML.T0056 | Steal ML Model | INC-006 |
 | AML.T0057 | Exfiltrate Via Cyber | INC-003, INC-008 |
 | AML.T0058 | Manipulate ML System | INC-007, INC-013 |

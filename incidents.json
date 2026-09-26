@@ -4,8 +4,8 @@
     "description": "Curated catalog of publicly documented AI/ML security incidents, mapped to MITRE ATLAS",
     "author": "CyberGemChick",
     "github": "https://github.com/cybergemchick",
-    "last_updated": "2025-07-19",
-    "version": "1.0.0",
+    "last_updated": "2026-09-26",
+    "version": "2.0.0",
     "sources": "Academic papers, public security advisories, news reporting, vendor disclosures",
     "disclaimer": "All entries are based on publicly reported information."
   },
