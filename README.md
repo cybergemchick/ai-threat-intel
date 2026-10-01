@@ -8,18 +8,20 @@ A curated, MITRE ATLAS-mapped catalog of publicly documented AI/ML security inci
 
 ## Coverage
 
-**27 documented incidents (2016 to 2025)**: 8 critical, 16 high, 3 medium. Every incident is mapped to [MITRE ATLAS v5.6.0](https://atlas.mitre.org/) and, where applicable, the [OWASP Top 10 for LLM Applications v1.1](https://owasp.org/www-project-top-10-for-large-language-model-applications/). Every entry links to at least one public source.
+**27 documented incidents (2016 to 2025)**: 8 critical, 16 high, 3 medium. Every incident is mapped to [MITRE ATLAS v5.6.0](https://atlas.mitre.org/) and, where it applies, the [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/). Every entry links to at least one public source.
 
 | Category | Count | Incidents | OWASP LLM IDs |
 |----------|-------|-----------|---------------|
-| Prompt Injection and Jailbreaks (direct, indirect, system prompt extraction) | 6 | INC-002, INC-005, INC-014, INC-017, INC-020, INC-023 | LLM01, LLM02, LLM06 |
-| Agentic AI Exploitation | 3 | INC-011, INC-015, INC-027 | LLM01, LLM06, LLM08 |
-| AI Supply Chain Compromise | 4 | INC-021, INC-022, INC-024, INC-025 | LLM01, LLM05, LLM07, LLM08 |
-| Training Data Poisoning and Backdoors | 2 | INC-012, INC-026 | LLM03 |
-| Data Leakage and Model Extraction | 4 | INC-001, INC-003, INC-006, INC-008 | LLM02, LLM03, LLM06, LLM10 |
+| Prompt Injection and Jailbreaks (direct, indirect, system prompt extraction) | 6 | INC-002, INC-005, INC-014, INC-017, INC-020, INC-023 | LLM01, LLM02, LLM05, LLM07 |
+| Agentic AI Exploitation | 3 | INC-011, INC-015, INC-027 | LLM01, LLM02, LLM06 |
+| AI Supply Chain Compromise | 4 | INC-021, INC-022, INC-024, INC-025 | LLM01, LLM03, LLM06 |
+| Training Data Poisoning and Backdoors | 2 | INC-012, INC-026 | LLM04 |
+| Data Leakage and Model Extraction | 4 | INC-001, INC-003, INC-006, INC-008 | LLM02, LLM10 |
 | Adversarial Evasion | 1 | INC-004 | None |
-| AI-Enabled Fraud and Abuse (deepfakes, influence ops, criminal LLMs, LLMjacking) | 5 | INC-007, INC-009, INC-013, INC-016, INC-018 | LLM02 |
+| AI-Enabled Fraud and Abuse (deepfakes, influence ops, criminal LLMs, LLMjacking) | 5 | INC-007, INC-009, INC-013, INC-016, INC-018 | None |
 | Bias and Hallucination | 2 | INC-010, INC-019 | LLM09 |
+
+`None` means the incident is outside the scope of the OWASP LLM list: misuse of AI by attackers, deepfakes, or non-LLM machine learning systems.
 
 ## Quick Start
 
@@ -131,12 +133,12 @@ To add an incident:
 1. Ensure it is **publicly reported** (news, academic paper, vendor disclosure, or CVE)
 2. Follow the schema above
 3. Include at least one reference URL
-4. Map to ATLAS techniques (use IDs from the official [atlas-data](https://github.com/mitre-atlas/atlas-data) release and add new ones to `atlas_techniques.json`) and OWASP LLM Top 10
+4. Map to ATLAS techniques (use IDs from the official [atlas-data](https://github.com/mitre-atlas/atlas-data) release and add new ones to `atlas_techniques.json`) and OWASP LLM Top 10 (2025 IDs, only where the incident is a vulnerability in an LLM application)
 5. Run `python -m pytest -q` before opening a PR
 
 ## References
 
 - [MITRE ATLAS](https://atlas.mitre.org/)
-- [OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/)
 - [AI Incident Database](https://incidentdatabase.ai/)
 - [AVID: AI Vulnerability Database](https://avidml.org/)

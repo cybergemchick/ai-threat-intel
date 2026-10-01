@@ -5,11 +5,11 @@
     "author": "CyberGemChick",
     "github": "https://github.com/cybergemchick",
     "last_updated": "2026-10-01",
-    "version": "2.1.1",
+    "version": "2.2.0",
     "sources": "Academic papers, public security advisories, news reporting, vendor disclosures",
     "disclaimer": "All entries are based on publicly reported information.",
     "atlas_version": "5.6.0",
-    "owasp_llm_version": "OWASP Top 10 for LLM Applications v1.1 (2023)"
+    "owasp_llm_version": "OWASP Top 10 for LLM Applications 2025"
   },
   "incidents": [
     {
@@ -24,7 +24,7 @@
         "AML.T0048"
       ],
       "owasp_llm": [
-        "LLM06"
+        "LLM02"
       ],
       "severity": "HIGH",
       "impact": "Exposure of chat titles and limited payment data; loss of user trust",
@@ -49,7 +49,7 @@
       ],
       "owasp_llm": [
         "LLM01",
-        "LLM06"
+        "LLM07"
       ],
       "severity": "MEDIUM",
       "impact": "System prompt disclosure, brand reputational harm, user manipulation",
@@ -73,8 +73,7 @@
         "AML.T0048"
       ],
       "owasp_llm": [
-        "LLM02",
-        "LLM06"
+        "LLM02"
       ],
       "severity": "HIGH",
       "impact": "Intellectual property exposure, trade secret risk",
@@ -121,8 +120,7 @@
         "AML.T0066"
       ],
       "owasp_llm": [
-        "LLM01",
-        "LLM02"
+        "LLM01"
       ],
       "severity": "CRITICAL",
       "impact": "Data exfiltration, user manipulation, unauthorized action execution",
@@ -168,9 +166,7 @@
         "AML.T0052.001",
         "AML.T0048"
       ],
-      "owasp_llm": [
-        "LLM02"
-      ],
+      "owasp_llm": [],
       "severity": "CRITICAL",
       "impact": "Financial loss ($25.6M), fraud, impersonation",
       "references": [
@@ -193,8 +189,7 @@
         "AML.T0057"
       ],
       "owasp_llm": [
-        "LLM03",
-        "LLM06"
+        "LLM02"
       ],
       "severity": "HIGH",
       "impact": "PII exposure, copyright violation, privacy breach",
@@ -238,9 +233,7 @@
       "atlas_techniques": [
         "AML.T0048"
       ],
-      "owasp_llm": [
-        "LLM09"
-      ],
+      "owasp_llm": [],
       "severity": "CRITICAL",
       "impact": "Discriminatory judicial outcomes, civil rights violations",
       "references": [
@@ -267,7 +260,7 @@
       ],
       "owasp_llm": [
         "LLM01",
-        "LLM08"
+        "LLM06"
       ],
       "severity": "HIGH",
       "impact": "Shows that a computer-use agent with shell access can be turned destructive by any document it reads",
@@ -291,7 +284,7 @@
         "AML.T0043.004"
       ],
       "owasp_llm": [
-        "LLM03"
+        "LLM04"
       ],
       "severity": "HIGH",
       "impact": "Latent dangerous behaviors surviving safety training",
@@ -313,9 +306,7 @@
       "atlas_techniques": [
         "AML.T0048"
       ],
-      "owasp_llm": [
-        "LLM02"
-      ],
+      "owasp_llm": [],
       "severity": "HIGH",
       "impact": "Cheaper, multilingual propaganda at scale; low reach so far",
       "references": [
@@ -362,7 +353,7 @@
       ],
       "owasp_llm": [
         "LLM01",
-        "LLM06"
+        "LLM02"
       ],
       "severity": "HIGH",
       "impact": "Shows prompt injection can propagate between connected AI agents without user action",
@@ -385,9 +376,7 @@
         "AML.T0052.000",
         "AML.T0048"
       ],
-      "owasp_llm": [
-        "LLM02"
-      ],
+      "owasp_llm": [],
       "severity": "CRITICAL",
       "impact": "Lowered barrier for sophisticated BEC attacks; follow-on tools (FraudGPT, DarkGPT) emerged in subsequent months",
       "references": [
@@ -434,9 +423,7 @@
         "AML.T0052.000",
         "AML.T0048"
       ],
-      "owasp_llm": [
-        "LLM02"
-      ],
+      "owasp_llm": [],
       "severity": "CRITICAL",
       "impact": "Confirmed operational use of commercial LLMs by state actors; demonstrated that AI policy enforcement requires geopolitical threat awareness",
       "references": [
@@ -484,7 +471,8 @@
       ],
       "owasp_llm": [
         "LLM01",
-        "LLM06"
+        "LLM02",
+        "LLM05"
       ],
       "severity": "HIGH",
       "impact": "Leakage of private-channel data to any workspace member who can post in a public channel",
@@ -509,7 +497,7 @@
       ],
       "owasp_llm": [
         "LLM01",
-        "LLM05"
+        "LLM03"
       ],
       "severity": "HIGH",
       "impact": "Backdoors introduced by a trusted coding assistant that pass code review",
@@ -534,8 +522,7 @@
         "AML.T0086"
       ],
       "owasp_llm": [
-        "LLM05",
-        "LLM07"
+        "LLM03"
       ],
       "severity": "HIGH",
       "impact": "Silent theft of every email sent through the tool by organizations that installed it",
@@ -562,7 +549,7 @@
       "owasp_llm": [
         "LLM01",
         "LLM02",
-        "LLM06"
+        "LLM05"
       ],
       "severity": "CRITICAL",
       "impact": "Silent exfiltration of any data in Copilot's retrieval scope (mail, OneDrive, SharePoint, Teams) with zero user interaction",
@@ -588,8 +575,8 @@
         "AML.T0101"
       ],
       "owasp_llm": [
-        "LLM05",
-        "LLM08"
+        "LLM03",
+        "LLM06"
       ],
       "severity": "HIGH",
       "impact": "A trusted, signed AI coding assistant was delivered to developers carrying destructive instructions; potential deletion of local and AWS resources",
@@ -615,8 +602,8 @@
         "AML.T0055"
       ],
       "owasp_llm": [
-        "LLM05",
-        "LLM08"
+        "LLM03",
+        "LLM06"
       ],
       "severity": "CRITICAL",
       "impact": "Per Wiz: >1,000 valid GitHub tokens, dozens of cloud and npm credentials, ~20,000 files leaked; a second wave made >5,500 private repos public across 400+ organizations",
@@ -642,7 +629,7 @@
         "AML.T0043.004"
       ],
       "owasp_llm": [
-        "LLM03"
+        "LLM04"
       ],
       "severity": "HIGH",
       "impact": "Poisoning web-scraped pretraining data is far cheaper than assumed; any actor able to publish ~hundreds of web pages could plant a trigger",
@@ -669,7 +656,7 @@
       ],
       "owasp_llm": [
         "LLM01",
-        "LLM08"
+        "LLM06"
       ],
       "severity": "CRITICAL",
       "impact": "Shows agentic AI can compress a nation-state intrusion campaign into largely autonomous operation, lowering the skill and labor barrier for sophisticated attacks",
