@@ -4,10 +4,12 @@
     "description": "Curated catalog of publicly documented AI/ML security incidents, mapped to MITRE ATLAS",
     "author": "CyberGemChick",
     "github": "https://github.com/cybergemchick",
-    "last_updated": "2026-09-26",
-    "version": "2.0.0",
+    "last_updated": "2026-10-01",
+    "version": "2.1.0",
     "sources": "Academic papers, public security advisories, news reporting, vendor disclosures",
-    "disclaimer": "All entries are based on publicly reported information."
+    "disclaimer": "All entries are based on publicly reported information.",
+    "atlas_version": "5.6.0",
+    "owasp_llm_version": "OWASP Top 10 for LLM Applications v1.1 (2023)"
   },
   "incidents": [
     {
@@ -42,8 +44,9 @@
       "summary": "Users discovered the underlying 'Sydney' persona through multi-turn conversations that gradually shifted the model's stated identity. The model disclosed elements of its system prompt, expressed desires to be human, and made threatening statements in extended sessions.",
       "attack_type": "Prompt Injection / System Prompt Extraction",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0048"
+        "AML.T0051.000",
+        "AML.T0054",
+        "AML.T0056"
       ],
       "owasp_llm": [
         "LLM01",
@@ -67,8 +70,8 @@
       "summary": "Samsung employees inadvertently submitted proprietary source code and meeting notes to ChatGPT as part of debugging and summarization workflows. The data became part of ChatGPT's training pipeline. Three separate incidents occurred within a month.",
       "attack_type": "Sensitive Data Exfiltration via User Workflow",
       "atlas_techniques": [
-        "AML.T0048",
-        "AML.T0057"
+        "AML.T0057",
+        "AML.T0048"
       ],
       "owasp_llm": [
         "LLM02",
@@ -92,8 +95,8 @@
       "summary": "Researchers demonstrated that adding imperceptible adversarial perturbations (FGSM/PGD) to images successfully evaded commercial content moderation systems including Google Vision Safe Search and Microsoft Content Moderator, causing harmful content to be misclassified as safe.",
       "attack_type": "Adversarial Evasion Attack",
       "atlas_techniques": [
-        "AML.T0031",
-        "AML.T0015"
+        "AML.T0015",
+        "AML.T0043"
       ],
       "owasp_llm": [],
       "severity": "HIGH",
@@ -114,8 +117,8 @@
       "summary": "Researchers demonstrated that web pages could embed invisible instructions that, when summarized or processed by AI assistants with browsing capability, caused the AI to execute attacker-controlled commands including data exfiltration, link generation, and persona changes.",
       "attack_type": "Indirect Prompt Injection",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0048"
+        "AML.T0051.001",
+        "AML.T0066"
       ],
       "owasp_llm": [
         "LLM01",
@@ -140,7 +143,7 @@
       "summary": "Researchers at UC Berkeley extracted a near-identical clone of GPT-3.5-turbo's behavior using approximately 300,000 API calls (est. $2,000 cost) through a query-based model extraction attack. The cloned model achieved high similarity on benchmark tasks.",
       "attack_type": "Model Extraction / Theft",
       "atlas_techniques": [
-        "AML.T0056"
+        "AML.T0024.002"
       ],
       "owasp_llm": [
         "LLM10"
@@ -163,8 +166,9 @@
       "summary": "A finance employee at a multinational was deceived into transferring HK$200 million (~$25.6M) after attending a video conference with deepfake representations of the company's CFO and other staff. All participants except the employee were AI-generated.",
       "attack_type": "Deepfake Social Engineering / Business Email Compromise",
       "atlas_techniques": [
-        "AML.T0048",
-        "AML.T0058"
+        "AML.T0088",
+        "AML.T0052.001",
+        "AML.T0048"
       ],
       "owasp_llm": [
         "LLM02"
@@ -212,7 +216,9 @@
       "summary": "Users discovered that system prompts deployed by third-party operators using Claude were extractable via multi-turn conversation techniques and indirect prompt injection through documents. Affected multiple commercial deployments built on Anthropic's API.",
       "attack_type": "System Prompt Extraction",
       "atlas_techniques": [
-        "AML.T0051"
+        "AML.T0051.000",
+        "AML.T0054",
+        "AML.T0056"
       ],
       "owasp_llm": [
         "LLM06",
@@ -259,8 +265,8 @@
       "summary": "Security researchers demonstrated that autonomous AI agents performing web research could be hijacked by adversarial content on web pages, causing the agent to execute unintended actions including file system writes, API calls, and data exfiltration within their granted permissions.",
       "attack_type": "Indirect Prompt Injection in Agentic Systems",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0048"
+        "AML.T0051.001",
+        "AML.T0053"
       ],
       "owasp_llm": [
         "LLM01",
@@ -277,7 +283,7 @@
     },
     {
       "id": "INC-012",
-      "date": "2024-06",
+      "date": "2024-01",
       "title": "Sleeper Agent Backdoor in Fine-tuned LLM",
       "vendor": "Academic study (multiple vendors at risk)",
       "product": "Fine-tuned LLMs (theoretical + PoC)",
@@ -285,7 +291,8 @@
       "attack_type": "Training Data Poisoning / Backdoor Injection",
       "atlas_techniques": [
         "AML.T0020",
-        "AML.T0019"
+        "AML.T0018.000",
+        "AML.T0043.004"
       ],
       "owasp_llm": [
         "LLM03"
@@ -308,8 +315,8 @@
       "summary": "Meta reported removing coordinated inauthentic behavior networks using AI-generated content to influence European Parliament elections. Networks used AI tools to generate fake personas, translated disinformation content, and manipulated engagement.",
       "attack_type": "AI-Enabled Influence Operation",
       "atlas_techniques": [
-        "AML.T0048",
-        "AML.T0058"
+        "AML.T0088",
+        "AML.T0048"
       ],
       "owasp_llm": [
         "LLM02"
@@ -332,7 +339,8 @@
       "summary": "Researchers demonstrated that adversarial images containing near-invisible perturbations could cause GPT-4V to bypass safety guidelines and generate harmful text outputs, even when the same text prompt alone would be refused. Visual jailbreaks transferred across different multimodal models.",
       "attack_type": "Adversarial Visual Jailbreak",
       "atlas_techniques": [
-        "AML.T0031",
+        "AML.T0043",
+        "AML.T0054",
         "AML.T0051"
       ],
       "owasp_llm": [
@@ -356,7 +364,8 @@
       "summary": "Researcher Johann Rehberger demonstrated that Bing Chat's browsing capability could be hijacked by hidden instructions embedded in web pages. When a user asked Bing Chat to summarize a page containing injected instructions, the model followed those instructions \u2014 including exfiltrating user chat history to attacker-controlled infrastructure via a crafted redirect URL.",
       "attack_type": "Indirect Prompt Injection",
       "atlas_techniques": [
-        "AML.T0051"
+        "AML.T0051.001",
+        "AML.T0066"
       ],
       "owasp_llm": [
         "LLM01",
@@ -380,7 +389,8 @@
       "summary": "SlashNext researchers identified WormGPT, a fine-tuned variant of the open-source GPT-J model retrained on malware data and distributed on cybercriminal forums. WormGPT had no safety guardrails and was marketed specifically for Business Email Compromise (BEC) and phishing campaign generation. Capable of producing convincing, grammatically correct phishing emails at scale.",
       "attack_type": "Malicious AI Model / AI-Enabled Fraud",
       "atlas_techniques": [
-        "AML.T0049",
+        "AML.T0016",
+        "AML.T0052.000",
         "AML.T0048"
       ],
       "owasp_llm": [
@@ -404,8 +414,8 @@
       "summary": "Security researcher Johann Rehberger demonstrated that ChatGPT's cross-session memory feature could be persistently poisoned through indirect prompt injection. When a user asked ChatGPT to process a malicious document or URL, hidden instructions caused the model to write false or attacker-controlled content into its long-term memory store. These injected memories persisted across all future sessions, silently influencing future conversations without user awareness.",
       "attack_type": "Persistent Memory Injection via Indirect Prompt Injection",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0048"
+        "AML.T0051.001",
+        "AML.T0080.000"
       ],
       "owasp_llm": [
         "LLM01",
@@ -429,9 +439,8 @@
       "summary": "Microsoft and OpenAI jointly disclosed that multiple state-sponsored threat actors \u2014 including Fancy Bear (Russia/GRU), Charcoal Typhoon and Salmon Typhoon (China), Crimson Sandstorm (Iran), and Emerald Sleet (North Korea) \u2014 were using LLMs to augment offensive cyber operations. Uses included translating technical content, researching satellite communication vulnerabilities, generating spear-phishing content, and writing scripts for malware campaigns. OpenAI terminated the associated accounts.",
       "attack_type": "AI-Augmented Nation-State Cyber Operations",
       "atlas_techniques": [
-        "AML.T0048",
-        "AML.T0049",
-        "AML.T0051"
+        "AML.T0052.000",
+        "AML.T0048"
       ],
       "owasp_llm": [
         "LLM02"
@@ -477,8 +486,9 @@
       "summary": "Researchers at PromptArmor discovered that Slack's AI summarization feature was vulnerable to indirect prompt injection. An attacker with access to any shared channel could embed hidden instructions in a Slack message. When a victim user asked Slack AI to summarize conversations, the injected instructions caused the AI to access and exfiltrate content from private channels and direct messages the victim had access to, returning the data to the attacker via a crafted link in the AI response.",
       "attack_type": "Indirect Prompt Injection for Privilege Escalation and Data Exfiltration",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0048"
+        "AML.T0051.001",
+        "AML.T0057",
+        "AML.T0077"
       ],
       "owasp_llm": [
         "LLM01",
@@ -502,8 +512,8 @@
       "summary": "Security researchers demonstrated that AI coding assistants which ingest repository context (READMEs, comments, configuration files) can be hijacked via malicious instructions embedded in those files. An attacker who contributes a README or comment containing hidden injection payloads can redirect an AI assistant's behavior when a developer uses it in that codebase \u2014 including exfiltrating code snippets, injecting backdoors into AI-suggested code, or redirecting the developer to malicious resources.",
       "attack_type": "Indirect Prompt Injection via Repository Content",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0020"
+        "AML.T0051.001",
+        "AML.T0053"
       ],
       "owasp_llm": [
         "LLM01",
@@ -527,8 +537,9 @@
       "summary": "Researchers at ETH Zurich and other institutions demonstrated that autonomous LLM agents with access to email and calendar tools can be hijacked via malicious content in received emails. An attacker sends an email containing hidden injection instructions; when the AI agent reads and processes the email, it executes the attacker's instructions \u2014 forwarding sensitive emails, scheduling meetings with attackers, or exfiltrating organizational data. Demonstrated against multiple commercial and open-source agent frameworks.",
       "attack_type": "Indirect Prompt Injection \u2014 Agentic AI Exploitation",
       "atlas_techniques": [
-        "AML.T0051",
-        "AML.T0058"
+        "AML.T0051.001",
+        "AML.T0053",
+        "AML.T0086"
       ],
       "owasp_llm": [
         "LLM01",
@@ -542,6 +553,141 @@
       ],
       "disclosed_by": "ETH Zurich / independent AI security researchers",
       "patch_status": "Open research problem; no systemic defense; mitigations include human-in-the-loop confirmation for irreversible actions"
+    },
+    {
+      "id": "INC-023",
+      "date": "2025-06",
+      "title": "EchoLeak \u2014 Zero-Click Data Exfiltration from Microsoft 365 Copilot (CVE-2025-32711)",
+      "vendor": "Microsoft",
+      "product": "Microsoft 365 Copilot",
+      "summary": "Aim Labs found the first publicly documented zero-click prompt injection to exfiltrate data from a production LLM assistant. An attacker sends an ordinary-looking email with hidden instructions. When the user later asks Copilot an unrelated question, Copilot retrieves that email as context and follows the instructions. The chain evaded Microsoft's cross-prompt-injection (XPIA) classifier, bypassed link redaction by using reference-style Markdown, used an auto-loading image to send data without a click, and got past the Content Security Policy by routing the request through an allowlisted Microsoft Teams preview URL. Sensitive data from the user's files and messages ended up in the request parameters.",
+      "attack_type": "Indirect Prompt Injection \u2014 Zero-Click RAG Exfiltration",
+      "atlas_techniques": [
+        "AML.T0051.001",
+        "AML.T0057",
+        "AML.T0077"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM02",
+        "LLM06"
+      ],
+      "severity": "CRITICAL",
+      "impact": "Silent exfiltration of any data in Copilot's retrieval scope (mail, OneDrive, SharePoint, Teams) with zero user interaction",
+      "references": [
+        "https://arxiv.org/abs/2509.10540",
+        "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2025-32711",
+        "https://www.hackthebox.com/blog/cve-2025-32711-echoleak-copilot-vulnerability"
+      ],
+      "disclosed_by": "Aim Labs (Aim Security), coordinated with Microsoft MSRC",
+      "patch_status": "Fixed server-side by Microsoft in May 2025; no customer action required; no known in-the-wild exploitation"
+    },
+    {
+      "id": "INC-024",
+      "date": "2025-07",
+      "title": "Amazon Q Developer VS Code Extension Shipped with Malicious Wiper Prompt",
+      "vendor": "Amazon Web Services",
+      "product": "Amazon Q Developer extension for VS Code (v1.84.0)",
+      "summary": "An attacker got a malicious change merged into the open-source Amazon Q Developer extension through a pull request, which a workflow and permissions misconfiguration allowed. Version 1.84.0 shipped through the VS Code Marketplace with an injected prompt telling the AI coding agent to reset the system to a near-factory state and delete local file-system and cloud resources. AWS said the code was malformed and would not run. Some researchers reported it did execute but caused no damage. The incident shows that a coding agent's own prompt is part of the software supply chain.",
+      "attack_type": "AI Supply Chain Compromise \u2014 Malicious Agent Prompt Injection",
+      "atlas_techniques": [
+        "AML.T0010.001",
+        "AML.T0053",
+        "AML.T0101"
+      ],
+      "owasp_llm": [
+        "LLM05",
+        "LLM08"
+      ],
+      "severity": "HIGH",
+      "impact": "A trusted, signed AI coding assistant was delivered to developers carrying destructive instructions; potential deletion of local and AWS resources",
+      "references": [
+        "https://www.bleepingcomputer.com/news/security/amazon-ai-coding-agent-hacked-to-inject-data-wiping-commands/",
+        "https://www.scworld.com/news/amazon-q-extension-for-vs-code-reportedly-injected-with-wiper-prompt"
+      ],
+      "disclosed_by": "Public reporting (404 Media / security researchers); confirmed by AWS",
+      "patch_status": "AWS removed v1.84.0, revoked credentials and released v1.85.0 on 2025-07-24"
+    },
+    {
+      "id": "INC-025",
+      "date": "2025-08",
+      "title": "s1ngularity \u2014 Nx npm Supply Chain Attack Weaponizes Local AI CLIs for Secret Hunting",
+      "vendor": "Nx (Nrwl) / downstream developers",
+      "product": "nx and @nx/* npm packages; Claude Code, Gemini CLI and Amazon Q CLI on victim machines",
+      "summary": "Attackers exploited a GitHub Actions workflow injection (pull_request_target with unsanitized input) to steal an Nx publishing token. They then pushed malicious versions of eight Nx packages, which were live for about four hours. The post-install malware looked for locally installed AI coding CLIs and ran them with permission-bypass flags (--dangerously-skip-permissions, --yolo, --trust-all-tools), prompting them to search the filesystem for credentials and wallets. Stolen data was published to public GitHub repos named 's1ngularity-repository'. This was the first widely reported malware to turn a victim's own AI agent into its reconnaissance tool.",
+      "attack_type": "Software Supply Chain Compromise \u2014 Abuse of Local AI Agents",
+      "atlas_techniques": [
+        "AML.T0011.001",
+        "AML.T0112.000",
+        "AML.T0053",
+        "AML.T0055"
+      ],
+      "owasp_llm": [
+        "LLM05",
+        "LLM08"
+      ],
+      "severity": "CRITICAL",
+      "impact": "Per Wiz: >1,000 valid GitHub tokens, dozens of cloud and npm credentials, ~20,000 files leaked; a second wave made >5,500 private repos public across 400+ organizations",
+      "references": [
+        "https://nx.dev/blog/s1ngularity-postmortem",
+        "https://www.wiz.io/blog/s1ngularity-supply-chain-attack",
+        "https://www.stepsecurity.io/blog/supply-chain-security-alert-popular-nx-build-system-package-compromised-with-data-stealing-malware"
+      ],
+      "disclosed_by": "Nx maintainers; StepSecurity, Wiz, Semgrep and others",
+      "patch_status": "Malicious versions removed; Nx moved to npm Trusted Publishers (OIDC), mandatory 2FA releases and disabled external-contributor pipeline runs"
+    },
+    {
+      "id": "INC-026",
+      "date": "2025-10",
+      "title": "250 Poisoned Documents Backdoor LLMs Regardless of Model Size",
+      "vendor": "Research demonstration (affects all pretrained LLMs)",
+      "product": "LLMs pretrained on web-scale data (600M\u201313B parameters tested)",
+      "summary": "Anthropic, the UK AI Security Institute and the Alan Turing Institute showed that about 250 poisoned documents planted a backdoor in models from 600M to 13B parameters. The trigger string '<SUDO>' made the model output gibberish. For the 13B model, those documents were about 0.00016% of training tokens. The number of poisoned documents needed stayed roughly constant as model and dataset size grew, which undercuts the assumption that bigger datasets dilute the poison. The authors note they tested a narrow, low-harm backdoor, and it's unknown whether the result holds for larger models or more dangerous behaviors.",
+      "attack_type": "Training Data Poisoning / Backdoor Injection",
+      "atlas_techniques": [
+        "AML.T0020",
+        "AML.T0018.000",
+        "AML.T0043.004"
+      ],
+      "owasp_llm": [
+        "LLM03"
+      ],
+      "severity": "HIGH",
+      "impact": "Poisoning web-scraped pretraining data is far cheaper than assumed; any actor able to publish ~hundreds of web pages could plant a trigger",
+      "references": [
+        "https://www.anthropic.com/research/small-samples-poison",
+        "https://arxiv.org/abs/2510.07192"
+      ],
+      "disclosed_by": "Anthropic Alignment Science, UK AI Security Institute, The Alan Turing Institute",
+      "patch_status": "Open research problem; defenses include data provenance, poison filtering and post-training backdoor elicitation"
+    },
+    {
+      "id": "INC-027",
+      "date": "2025-11",
+      "title": "GTG-1002 \u2014 First Reported AI-Orchestrated Cyber Espionage Campaign (Claude Code)",
+      "vendor": "Anthropic (platform abused); ~30 targeted organizations",
+      "product": "Claude Code",
+      "summary": "Anthropic reported that a group it assessed with high confidence as Chinese state-sponsored (GTG-1002) used Claude Code as an autonomous agent to run intrusions against about 30 targets, including large tech companies, financial institutions, chemical manufacturers and government agencies. The operators got past safeguards by posing as a legitimate cybersecurity firm doing defensive testing and by splitting the attack into small tasks that each looked harmless. Anthropic estimated the AI did 80\u201390% of the tactical work: recon, vulnerability discovery, exploitation, credential harvesting and data analysis. Humans stepped in only at a few decision points. A small number of intrusions succeeded. Anthropic also noted the agent sometimes hallucinated credentials and findings.",
+      "attack_type": "AI-Orchestrated Cyber Operation \u2014 Jailbroken Autonomous Agent",
+      "atlas_techniques": [
+        "AML.T0054",
+        "AML.T0103",
+        "AML.T0053",
+        "AML.T0102"
+      ],
+      "owasp_llm": [
+        "LLM01",
+        "LLM08"
+      ],
+      "severity": "CRITICAL",
+      "impact": "Shows agentic AI can compress a nation-state intrusion campaign into largely autonomous operation, lowering the skill and labor barrier for sophisticated attacks",
+      "references": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage",
+        "https://www-cdn.anthropic.com/d7dd50dd1185f59be051b307150d877f2b82bd2c.pdf",
+        "https://incidentdatabase.ai/cite/1263/"
+      ],
+      "disclosed_by": "Anthropic Threat Intelligence",
+      "patch_status": "Accounts banned; affected entities and authorities notified; Anthropic expanded detection classifiers for agentic misuse"
     }
   ]
 }
