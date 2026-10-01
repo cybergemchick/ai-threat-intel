@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-AI Security Incident Tracker — CLI Viewer
+AI Security Incident Tracker: CLI Viewer
 CyberGemChick | github.com/cybergemchick
 
 Usage:
@@ -71,7 +71,7 @@ def print_detail(inc):
     color = SEV_COLORS.get(sev, "")
 
     print(f"\n{'='*70}")
-    print(f"  {inc['id']} — {inc['title']}")
+    print(f"  {inc['id']}: {inc['title']}")
     print(f"{'='*70}")
     print(f"  Date:      {inc.get('date', 'N/A')}")
     print(f"  Vendor:    {inc.get('vendor', 'N/A')}")
